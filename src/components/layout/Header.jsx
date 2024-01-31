@@ -16,7 +16,7 @@ function Header( props ) {
         <div>
             <div className="tada-flex-row tada-admin-header">
                 <div>
-                    <a href={ logoLink } target='_blank'><img src={ '' + logoURL }  alt='logo' width="200px" /></a>
+                    <a href={ logoURL } target='_blank'><img src={ '' + logoLink }  alt='logo' width="200px" /></a>
                 </div>
                 <div>
                     <h1 className="tada-admin-page-heading">{ props.pageTitle }</h1>
