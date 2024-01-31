@@ -1,11 +1,11 @@
 {
   "name": "@tadamus/wplayoutpack",
-  "version": "1.0.0",
+  "version": "1.0.20",
   "description": "A collection of React components that we use to build interfaces for our plugins.",
-  "main": "index.js",
+  "main": "./lib/index.js",
   "scripts": {
     "transpile": "rimraf lib && babel src -d lib --copy-files",
-    "prepublishOnly": "npm run webpack",
+    "prepublishOnly": "npm run transpile",
     "build": "webpack"
   },
   "repository": {
@@ -44,6 +44,6 @@
     "webpack": "^5.89.0"
   },
   "files": [
-    "lib"
+    "/lib"
   ]
 }
