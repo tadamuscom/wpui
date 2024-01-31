@@ -37,8 +37,10 @@
     "@babel/core": "^7.22.17",
     "@babel/preset-env": "^7.22.15",
     "@babel/preset-react": "^7.22.15",
+    "css-loader": "^6.10.0",
     "file-loader": "^6.2.0",
     "rimraf": "^5.0.1",
+    "style-loader": "^3.3.4",
     "webpack": "^5.89.0"
   },
   "files": [
