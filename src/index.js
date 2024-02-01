@@ -1,4 +1,5 @@
-// import '../style/main.css';
+import './style/main.css';
+
 import { triggerError, resetForm } from "./helpers/formHelper";
 import { resetTable, triggerColumnError, getElementID, columnAddLoader } from "./helpers/tableHelper";
 import Header from "./components/layout/Header";
@@ -26,5 +27,3 @@ export * from "./components/form/SingleTextInput";
 export * from "./components/table/Table";
 export * from "./components/typography/HeadingTwo";
 export * from "./components/LinkButton";
-
-console.log( 'hello from the other side' );

@@ -1,11 +1,10 @@
 {
   "name": "@tadamus/wplayoutpack",
-  "version": "1.0.20",
+  "version": "1.0.32",
   "description": "A collection of React components that we use to build interfaces for our plugins.",
   "main": "./lib/index.js",
   "scripts": {
     "transpile": "rimraf lib && babel src -d lib --copy-files",
-    "prepublishOnly": "npm run transpile",
     "build": "webpack"
   },
   "repository": {
@@ -37,13 +36,15 @@
     "@babel/core": "^7.22.17",
     "@babel/preset-env": "^7.22.15",
     "@babel/preset-react": "^7.22.15",
+    "@tsconfig/recommended": "^1.0.3",
     "css-loader": "^6.10.0",
     "file-loader": "^6.2.0",
     "rimraf": "^5.0.1",
     "style-loader": "^3.3.4",
+    "typescript": "^5.3.3",
     "webpack": "^5.89.0"
   },
   "files": [
-    "/lib"
+    "./lib/**/*"
   ]
 }
