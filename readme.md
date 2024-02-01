@@ -1,4 +1,4 @@
-# WP Layout Pack
+# WP UI
 
 A collection of React components that we use to build interfaces for the plugins from [Tadamus](https://tadamus.com).
 
