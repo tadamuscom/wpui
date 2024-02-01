@@ -1,15 +1,16 @@
 {
-  "name": "@tadamus/wplayoutpack",
-  "version": "1.0.32",
+  "name": "@tadamus/wpui",
+  "version": "1.0.0",
   "description": "A collection of React components that we use to build interfaces for our plugins.",
   "main": "./lib/index.js",
   "scripts": {
     "transpile": "rimraf lib && babel src -d lib --copy-files",
-    "build": "webpack"
+    "build": "webpack",
+    "prepublishOnly": "npm run transpile"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tadamuscom/wplayoutpack.git"
+    "url": "git+https://github.com/tadamuscom/wpui.git"
   },
   "keywords": [
     "layout",

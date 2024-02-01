@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Header( props ) {
+function Header ( props ) {
     let logoLink = 'https://account.tadamus.com/wp-content/uploads/2023/11/Tadamus-logo-300-60-px.png';
     let logoURL = 'https://tadamus.com';
 
