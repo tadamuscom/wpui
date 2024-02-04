@@ -1,6 +1,6 @@
 {
   "name": "@tadamus/wpui",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A collection of React components that we use to build interfaces for our plugins.",
   "main": "./lib/index.js",
   "scripts": {
@@ -22,7 +22,7 @@
   "bugs": {
     "url": "https://github.com/tadamuscom/wplayoutpack/issues"
   },
-  "homepage": "https://github.com/tadamuscom/wplayoutpack#readme",
+  "homepage": "https://tadamus.com",
   "dependencies": {
     "@codeamp/block-components": "0.0.1-beta.9",
     "@wordpress/scripts": "^26.9.0",

@@ -2,6 +2,21 @@
 
 A collection of React components that we use to build interfaces for the plugins from [Tadamus](https://tadamus.com).
 
+## Changelog
+
+### 1.0.2
+- Fixed a bug in the HelperText component
+- Added block comments to the components
+
+### 1.0.1
+- Added the DatePicker component
+- Added the Select component
+- Added the SelectOption component
+- Fixed the order of the components
+
+### 1.0.0
+- Initial Release
+
 ## Elements
 The set of elements included in the library.
 
@@ -95,6 +110,47 @@ The id attribute of the HTML input element
 The function that will run on the onChange event listener along with the default function.
 ##### value
 The value of the element.
+
+### DatePicker
+A input field for dates
+#### Props
+The dynamic variables that can be passed to the component.
+##### wrapExtraClass
+Class names that will be added to the wrap div.
+##### extraClass
+Class names that will be added to the input element.
+##### name
+The name attribute of the HTML input element
+##### id
+The id attribute of the HTML input element
+##### min
+The min attribute of the HTML input element
+##### max
+The max attribute of the HTML input element
+
+### Select
+A input field for dropdowns
+#### Props
+The dynamic variables that can be passed to the component.
+##### wrapExtraClass
+Class names that will be added to the wrap div.
+##### extraClass
+Class names that will be added to the select element.
+##### name
+The name attribute of the HTML input element
+##### id
+The id attribute of the HTML input element
+##### options
+The array of SelectOption components that represent the options of the dropdown
+
+## SelectOption
+A option field that acts as a child for the Select component
+#### Props
+The dynamic variables that can be passed to the component.
+##### id
+The id attribute of the HTML option element
+##### label
+The text that will be added to the option.
 
 ### Header
 The header element that we add at the top of any administrator page.

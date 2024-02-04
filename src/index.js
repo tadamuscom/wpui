@@ -3,6 +3,15 @@ import TableHeader from "./components/table/TableHeader";
 import TableRow from "./components/table/TableRow";
 import sanitizeHtml from "sanitize-html";
 
+/**
+ * Add a submit input styled like a button
+ *
+ * @since 1.0.2
+ *
+ * @param props
+ * @returns {Element}
+ * @constructor
+ */
 export const Button = ( props ) => {
     return (
         <div className={ props.wrapExtraClass }>
@@ -11,6 +20,15 @@ export const Button = ( props ) => {
     );
 }
 
+/**
+ * Add a checkbox input
+ *
+ * @since 1.0.2
+ *
+ * @param props
+ * @returns {Element}
+ * @constructor
+ */
 export const CheckBox = ( props ) => {
     const [value, setValue] = useState( props.value );
 
@@ -33,6 +51,15 @@ export const CheckBox = ( props ) => {
     );
 }
 
+/**
+ * Add a div that will be the wrapper for input elements, their labels and helper texts.
+ *
+ * @since 1.0.2
+ *
+ * @param props
+ * @returns {Element}
+ * @constructor
+ */
 export const FormGroup = ( props ) => {
     return (
         <div className={ ( props.extraClass ) ? 'tada-form-group ' + props.extraClass : 'tada-form-group ' + '' }>
@@ -41,14 +68,32 @@ export const FormGroup = ( props ) => {
     );
 }
 
+/**
+ * Add a helper text under inputs
+ *
+ * @since 1.0.2
+ *
+ * @param props
+ * @returns {Element}
+ * @constructor
+ */
 export const HelperText = ( props ) => {
     return (
         <div className={ props.wrapExtraClass }>
-            <p className={ 'tada-helper-text' + props.extraClass }>{ props.content }</p>
+            <p className={ 'tada-helper-text ' + props.extraClass }>{ props.content }</p>
         </div>
     );
 }
 
+/**
+ * Add a label
+ *
+ * @since 1.0.2
+ *
+ * @param props
+ * @returns {Element}
+ * @constructor
+ */
 export const Label = ( props ) => {
     return (
         <div className={ props.wrapExtraClass }>
@@ -57,6 +102,15 @@ export const Label = ( props ) => {
     );
 }
 
+/**
+ * Add a password input
+ *
+ * @since 1.0.2
+ *
+ * @param props
+ * @returns {Element}
+ * @constructor
+ */
 export const SinglePasswordInput = (props) => {
     const [value, setValue] = useState( props.value );
 
@@ -75,6 +129,15 @@ export const SinglePasswordInput = (props) => {
     );
 }
 
+/**
+ * Add a text input
+ *
+ * @since 1.0.2
+ *
+ * @param props
+ * @returns {Element}
+ * @constructor
+ */
 export const SingleTextInput = ( props ) => {
     const [value, setValue] = useState( props.value );
 
@@ -93,6 +156,103 @@ export const SingleTextInput = ( props ) => {
     );
 }
 
+/**
+ * Add a datepicker input
+ *
+ * @since 1.0.2
+ *
+ * @param props
+ * @returns {Element}
+ * @constructor
+ */
+export const DatePicker = ( props ) => {
+    return (
+        <div className={ props.wrapExtraClass }>
+            <input type="date" className={ props.extraClass } id={ props.id } name={ props.name } min={ props.min } max={ props.max } />
+        </div>
+    );
+}
+
+/**
+ * Add a select element
+ *
+ * @since 1.0.2
+ *
+ * @param props
+ * @returns {Element}
+ * @constructor
+ */
+export const Select = ( props ) => {
+    return (
+        <div className={ props.wrapExtraClass }>
+            <select className={ 'tada-select ' + props.extraClass } id={ props.id } name={ props.name }>
+                { props.options }
+            </select>
+        </div>
+    );
+}
+
+/**
+ * Add an option element for dropdowns
+ *
+ * @since 1.0.2
+ *
+ * @param props
+ * @returns {Element}
+ * @constructor
+ */
+export const SelectOption = ( props ) => {
+    return (
+        <option value={ props.id }>
+            { props.label }
+        </option>
+    );
+}
+
+/**
+ * Add the main Header for the pages
+ *
+ * @since 1.0.2
+ *
+ * @param props
+ * @returns {Element}
+ * @constructor
+ */
+export const Header = ( props ) => {
+    let logoLink = 'https://account.tadamus.com/wp-content/uploads/2023/11/Tadamus-logo-300-60-px.png';
+    let logoURL = 'https://tadamus.com';
+
+    if( props.logoLink ){
+        logoLink = props.logoLink;
+    }
+
+    if( props.logoURL ){
+        logoURL = props.logoURL;
+    }
+
+    return (
+        <div>
+            <div className="tada-flex-row tada-admin-header">
+                <div>
+                    <a href={ logoURL } target='_blank'><img src={ '' + logoLink }  alt='logo' width="200px" /></a>
+                </div>
+                <div>
+                    <h1 className="tada-admin-page-heading">{ props.pageTitle }</h1>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+/**
+ * Add a Table
+ *
+ * @since 1.0.2
+ *
+ * @param props
+ * @returns {Element}
+ * @constructor
+ */
 export const Table = ( props ) => {
     const preHeaders = [];
     const preRows = [];
@@ -135,6 +295,15 @@ export const Table = ( props ) => {
     );
 }
 
+/**
+ * Add a H2 element
+ *
+ * @since 1.0.2
+ *
+ * @param props
+ * @returns {Element}
+ * @constructor
+ */
 export const HeadingTwo = ( props ) => {
     return (
         <div className={ 'tada-flex ' + props.wrapExtraClass }>
@@ -143,6 +312,15 @@ export const HeadingTwo = ( props ) => {
     );
 }
 
+/**
+ * Add an A element stylized like a button
+ *
+ * @since 1.0.2
+ *
+ * @param props
+ * @returns {Element}
+ * @constructor
+ */
 export const LinkButton = ( props ) => {
     return (
         <div
@@ -157,32 +335,14 @@ export const LinkButton = ( props ) => {
     );
 }
 
-export const Header = ( props ) => {
-    let logoLink = 'https://account.tadamus.com/wp-content/uploads/2023/11/Tadamus-logo-300-60-px.png';
-    let logoURL = 'https://tadamus.com';
-
-    if( props.logoLink ){
-        logoLink = props.logoLink;
-    }
-
-    if( props.logoURL ){
-        logoURL = props.logoURL;
-    }
-
-    return (
-        <div>
-            <div className="tada-flex-row tada-admin-header">
-                <div>
-                    <a href={ logoURL } target='_blank'><img src={ '' + logoLink }  alt='logo' width="200px" /></a>
-                </div>
-                <div>
-                    <h1 className="tada-admin-page-heading">{ props.pageTitle }</h1>
-                </div>
-            </div>
-        </div>
-    );
-}
-
+/**
+ * Trigger an error for a form
+ *
+ * @since 1.0.2
+ *
+ * @param elementId
+ * @param message
+ */
 export const triggerError = ( elementId, message ) => {
     const element = document.getElementById( elementId );
     const parent = element.parentNode;
@@ -207,6 +367,13 @@ export const triggerError = ( elementId, message ) => {
     }
 }
 
+/**
+ * Reset the errors from a form
+ *
+ * @since 1.0.2
+ *
+ * @param formElement
+ */
 export const resetForm = ( formElement ) => {
     const status = document.getElementById( 'tada-status' );
     status.innerText = '';
@@ -225,6 +392,13 @@ export const resetForm = ( formElement ) => {
     } );
 }
 
+/**
+ * Reset a table
+ *
+ * @since 1.0.0
+ *
+ * @param columnElement
+ */
 export const resetTable = ( columnElement ) => {
     const errorElement = document.getElementById( 'table-error' );
 
@@ -237,6 +411,15 @@ export const resetTable = ( columnElement ) => {
     }
 }
 
+/**
+ * Trigger an error in a column table
+ *
+ * @since 1.0.2
+ *
+ * @param columnElement
+ * @param table
+ * @param message
+ */
 export const triggerColumnError = ( columnElement, table , message ) => {
     columnElement.style.borderColor = 'red';
 
@@ -249,6 +432,14 @@ export const triggerColumnError = ( columnElement, table , message ) => {
     tableParent.appendChild( errorParagraph );
 }
 
+/**
+ * Get the ID of the table object
+ *
+ * @since 1.0.2
+ *
+ * @param row
+ * @returns {string|string}
+ */
 export const getElementID = ( row ) => {
     let returnable;
 
@@ -263,6 +454,14 @@ export const getElementID = ( row ) => {
     return sanitizeHtml( returnable );
 }
 
+/**
+ * Add a loader to a table column
+ *
+ * @since 1.0.2
+ *
+ * @param row
+ * @returns {HTMLDivElement|boolean}
+ */
 export const columnAddLoader = ( row ) => {
     const children = row.childNodes;
     let existingLoader = false;
@@ -285,6 +484,13 @@ export const columnAddLoader = ( row ) => {
     return existingLoader;
 }
 
+/**
+ * Reset a form group from errors
+ *
+ * @since 1.0.2
+ *
+ * @param group
+ */
 const resetErrorGroup = ( group ) => {
     group.forEach( ( input ) => {
         if( input.classList.contains( 'tada-field-error' ) ){
