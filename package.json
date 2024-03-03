@@ -1,6 +1,6 @@
 {
   "name": "@tadamus/wpui",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A collection of React components that we use to build interfaces for our plugins.",
   "main": "./lib/index.js",
   "scripts": {

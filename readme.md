@@ -4,6 +4,9 @@ A collection of React components that we use to build interfaces for the plugins
 
 ## Changelog
 
+### 1.0.3
+- Removed the external logo dependency to match WordPress' coding standards
+
 ### 1.0.2
 - Fixed a bug in the HelperText component
 - Added block comments to the components
@@ -24,9 +27,9 @@ The set of elements included in the library.
 A button based on an input element.
 #### Props
 The dynamic variables that can be passed to the component.
-##### wrapExtraClass 
+##### wrapExtraClass
 Class names that will be added to the wrap div.
-##### extraClass 
+##### extraClass
 Class names that will be added to the button.
 ##### label
 The text that will be added on the button.
@@ -157,7 +160,7 @@ The header element that we add at the top of any administrator page.
 #### Props
 The dynamic variables that can be passed to the component.
 ##### logoLink
-The image that will be added to the logo image element. Default: https://account.tadamus.com/wp-content/uploads/2023/11/Tadamus-logo-300-60-px.png
+The image that will be added to the logo image element.
 ##### logoURL
 The link that will be added to the logo. Default: https://tadamus.com
 ### pageTitle
