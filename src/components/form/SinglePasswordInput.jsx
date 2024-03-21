@@ -17,9 +17,9 @@ export const SinglePasswordInput = ({
   id,
   name,
 }) => {
-  const [value, setValue] = useState(value);
+  const [localValue, setValue] = useState(value);
 
-  const onChange = (e) => {
+  const handleChange = (e) => {
     setValue(e.target.value);
 
     if (onChange) {
@@ -35,8 +35,8 @@ export const SinglePasswordInput = ({
         className={extraClass}
         id={id}
         name={name}
-        value={value}
-        onChange={onChange}
+        value={localValue}
+        onChange={handleChange}
       />
     </div>
   );

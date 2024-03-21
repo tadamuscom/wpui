@@ -9,18 +9,11 @@ import { useState } from "react";
  * @returns {Element}
  * @constructor
  */
-export const CheckBox = ({
-  value,
-  onChange,
-  wrapExtraClass,
-  label,
-  name,
-  id,
-}) => {
+export const CheckBox = ({ onChange, wrapExtraClass, label, name, id }) => {
   const [value, setValue] = useState(value);
 
-  const onChange = (e) => {
-    setValue(!value);
+  const handleChange = () => {
+    setValue((state) => !state);
 
     if (onChange) {
       onChange();
@@ -36,7 +29,7 @@ export const CheckBox = ({
           checked={value}
           name={name}
           id={id}
-          onChange={onChange}
+          onChange={handleChange}
         />
         <span className="checkmark"></span>
       </label>

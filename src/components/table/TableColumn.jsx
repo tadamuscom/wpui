@@ -4,11 +4,9 @@ import ContentEditable from "react-contenteditable";
 export const TableColumn = ({ data, editable, column, onBlur }) => {
   const [columnData, setColumnData] = useState(data);
 
-  const onChange = (event) => {
+  const handleChange = (event) => {
     setColumnData(event.target.value);
   };
-
-  let editable = editable;
 
   switch (column) {
     case "ID":
@@ -25,7 +23,7 @@ export const TableColumn = ({ data, editable, column, onBlur }) => {
       <td column={column}>
         <ContentEditable
           html={columnData}
-          onChange={onChange}
+          onChange={handleChange}
           onBlur={onBlur}
         />
       </td>
