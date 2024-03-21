@@ -14,7 +14,7 @@ export * from "./components/form/SingleTextInput";
 export * from "./components/layout/Header";
 
 // Table
-export * from "./components/layout/Table";
+export * from "./components/table/Table";
 
 // Typography
 export * from "./components/typography/HeadingTwo";
