@@ -1,13 +1,18 @@
-import React from 'react';
-
-function Select(props) {
-    return (
-        <div className={ props.wrapExtraClass }>
-            <select className={ 'tada-select ' + props.extraClass } id={ props.id } name={ props.name }>
-                { props.options }
-            </select>
-        </div>
-    );
-}
-
-export default Select;
+/**
+ * Add a select element
+ *
+ * @since 1.0.2
+ *
+ * @param props
+ * @returns {Element}
+ * @constructor
+ */
+export const Select = ({ wrapExtraClass, extraClass, id, name, options }) => {
+  return (
+    <div className={wrapExtraClass}>
+      <select className={`tada-select ${extraClass}`} id={id} name={name}>
+        {options}
+      </select>
+    </div>
+  );
+};

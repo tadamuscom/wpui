@@ -1,11 +1,18 @@
-import React from 'react';
-
-function Label( props ) {
-    return (
-        <div className={ props.wrapExtraClass }>
-            <label htmlFor={ props.htmlFor } className={ props.extraClass }>{ props.label }</label>
-        </div>
-    );
-}
-
-export default Label;
+/**
+ * Add a label
+ *
+ * @since 1.0.2
+ *
+ * @param props
+ * @returns {Element}
+ * @constructor
+ */
+export const Label = ({ wrapExtraClass, htmlFor, extraClass, label }) => {
+  return (
+    <div className={wrapExtraClass}>
+      <label htmlFor={htmlFor} className={extraClass}>
+        {label}
+      </label>
+    </div>
+  );
+};

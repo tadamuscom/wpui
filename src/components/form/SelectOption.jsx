@@ -1,11 +1,12 @@
-import React from 'react';
-
-function SelectOption(props) {
-    return (
-        <option value={ props.id }>
-            { props.label }
-        </option>
-    );
-}
-
-export default SelectOption;
+/**
+ * Add an option element for dropdowns
+ *
+ * @since 1.0.2
+ *
+ * @param props
+ * @returns {Element}
+ * @constructor
+ */
+export const SelectOption = ({ id, label }) => {
+  return <option value={id}>{label}</option>;
+};

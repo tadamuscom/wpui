@@ -1,24 +1,31 @@
-import React from 'react';
+import React from "react";
 
-function Header ( props ) {
-    let logoURL = 'https://tadamus.com';
+/**
+ * Add the main Header for the pages
+ *
+ * @since 1.0.2
+ *
+ * @param props
+ * @returns {Element}
+ * @constructor
+ */
+export const Header = ({ logoURL, logoLink, pageTitle }) => {
+  if (!logoURL) {
+    logoURL = "https://tadamus.com";
+  }
 
-    if( props.logoURL ){
-        logoURL = props.logoURL;
-    }
-
-    return (
+  return (
+    <div>
+      <div className="tada-flex-row tada-admin-header">
         <div>
-            <div className="tada-flex-row tada-admin-header">
-                <div>
-                    <a href={ logoURL } target='_blank'><img src={ '' + props.logoLink }  alt='logo' width="200px" /></a>
-                </div>
-                <div>
-                    <h1 className="tada-admin-page-heading">{ props.pageTitle }</h1>
-                </div>
-            </div>
+          <a href={logoURL} target="_blank">
+            <img src={"" + logoLink} alt="logo" width="200px" />
+          </a>
         </div>
-    );
-}
-
-export default Header;
+        <div>
+          <h1 className="tada-admin-page-heading">{pageTitle}</h1>
+        </div>
+      </div>
+    </div>
+  );
+};

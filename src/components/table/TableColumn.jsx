@@ -1,38 +1,34 @@
-import React, {useState} from 'react';
-import sanitizeHtml from "sanitize-html"
-import ContentEditable from 'react-contenteditable';
+import { useState } from "react";
+import ContentEditable from "react-contenteditable";
 
-function TableColumn( props ) {
-    const [ columnData, setColumnData ] = useState( props.data );
-    const [ previousData, setPreviousData ] = useState( props.data );
+export const TableColumn = ({ data, editable, column, onBlur }) => {
+  const [columnData, setColumnData] = useState(data);
 
-    const onChange = ( event ) => {
-        setColumnData( event.target.value );
-    }
+  const onChange = (event) => {
+    setColumnData(event.target.value);
+  };
 
-    let editable = props.editable;
+  let editable = editable;
 
-    switch ( props.column ){
-        case 'ID':
-        case 'id':
-        case 'created_at':
-        case 'expires_at':
-            editable = false;
-    }
+  switch (column) {
+    case "ID":
+    case "id":
+    case "created_at":
+    case "expires_at":
+      editable = false;
+  }
 
-    if( ! editable ){
-        return (
-            <td column={ props.column }>
-                { columnData }
-            </td>
-        );
-    }else{
-        return (
-            <td column={ props.column }>
-                <ContentEditable html={ columnData }  onChange={ onChange } onBlur={ props.onBlur }/>
-            </td>
-        );
-    }
-}
-
-export default TableColumn;
+  if (!editable) {
+    return <td column={column}>{columnData}</td>;
+  } else {
+    return (
+      <td column={column}>
+        <ContentEditable
+          html={columnData}
+          onChange={onChange}
+          onBlur={onBlur}
+        />
+      </td>
+    );
+  }
+};

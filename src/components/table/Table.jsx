@@ -1,47 +1,45 @@
-import React, { useState } from 'react';
 import TableHeader from "./TableHeader";
 import TableRow from "./TableRow";
 
-function Table( props ) {
-    const preHeaders = [];
-    const preRows = [];
+/**
+ * Add a Table
+ *
+ * @since 1.0.2
+ *
+ * @param props
+ * @returns {Element}
+ * @constructor
+ */
+export const Table = ({ editable, onBlur, extraClass, onDelete }) => {
+  if (!editable) {
+    editable = false;
+  }
 
-    let editable = false;
-    let onBlur = false;
+  if (!onBlur) {
+    onBlur = false;
+  }
 
-    if( props.editable ){
-        editable = props.editable;
-    }
-
-    if( props.onBlur ){
-        onBlur = props.onBlur;
-    }
-
-    preHeaders.push( <TableHeader content='ID' key={ 'id' } /> );
-
-    props.headers.forEach( ( element, index ) => {
-        preHeaders.push( <TableHeader content={ element } key={ index } /> );
-    } );
-
-    props.rows.forEach( ( element, index ) => {
-        preRows.push( <TableRow columns={ element } key={ index } editable={ editable } onBlur={ onBlur } /> );
-    } );
-
-    const [ rows, setRows ] = useState( preRows );
-    const [ headers, setHeaders ] = useState( preHeaders );
-
-    return (
-        <table className={ 'tada-table ' + props.extraClass }>
-            <thead>
-                <tr>
-                    { headers }
-                </tr>
-            </thead>
-            <tbody>
-                { rows }
-            </tbody>
-        </table>
-    );
-}
-
-export default Table;
+  return (
+    <table className={`tada-table ${extraClass}`}>
+      <thead>
+        <tr>
+          <TableHeader content="ID" key={"id"} />
+          {headers.map((header, index) => {
+            <TableHeader content={header} key={index} />;
+          })}
+        </tr>
+      </thead>
+      <tbody>
+        {rows.map((row, index) => {
+          <TableRow
+            columns={row}
+            key={index}
+            editable={editable}
+            onBlur={onBlur}
+            onDelete={onDelete}
+          />;
+        })}
+      </tbody>
+    </table>
+  );
+};

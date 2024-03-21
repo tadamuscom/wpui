@@ -1,11 +1,12 @@
-import React from 'react';
-
-function FormGroup( props ) {
-    return (
-        <div className={ ( props.extraClass ) ? 'tada-form-group ' + props.extraClass : 'tada-form-group ' + '' }>
-            { props.children }
-        </div>
-    );
-}
-
-export default FormGroup;
+/**
+ * Add a div that will be the wrapper for input elements, their labels and helper texts.
+ *
+ * @since 1.0.2
+ *
+ * @param props
+ * @returns {Element}
+ * @constructor
+ */
+export const FormGroup = ({ extraClass, children }) => {
+  return <div className={`tada-form-group ${extraClass}`}>{children}</div>;
+};
