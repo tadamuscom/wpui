@@ -9,7 +9,14 @@ import { useState } from "react";
  * @returns {Element}
  * @constructor
  */
-export const CheckBox = ({ onChange, wrapExtraClass, label, name, id }) => {
+export const CheckBox = ({
+  onChange,
+  wrapExtraClass,
+  label,
+  name,
+  id,
+  disabled,
+}) => {
   const [value, setValue] = useState(value);
 
   const handleChange = () => {
@@ -21,18 +28,17 @@ export const CheckBox = ({ onChange, wrapExtraClass, label, name, id }) => {
   };
 
   return (
-    <div className={wrapExtraClass}>
-      <label className="checkbox-container tada-flex-row">
-        <span className="checkbox-label">{label}</span>
-        <input
-          type="checkbox"
-          checked={value}
-          name={name}
-          id={id}
-          onChange={handleChange}
-        />
-        <span className="checkmark"></span>
-      </label>
-    </div>
+    <label className={`checkbox-container tada-flex-row ${wrapExtraClass}`}>
+      <span className="checkbox-label">{label}</span>
+      <input
+        type="checkbox"
+        checked={value}
+        name={name}
+        id={id}
+        onChange={handleChange}
+        disabled={disabled}
+      />
+      <span className="checkmark"></span>
+    </label>
   );
 };

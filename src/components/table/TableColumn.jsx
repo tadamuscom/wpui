@@ -16,17 +16,15 @@ export const TableColumn = ({ data, editable, column, onBlur }) => {
       editable = false;
   }
 
-  if (!editable) {
-    return <td column={column}>{columnData}</td>;
-  } else {
-    return (
-      <td column={column}>
-        <ContentEditable
-          html={columnData}
-          onChange={handleChange}
-          onBlur={onBlur}
-        />
-      </td>
-    );
-  }
+  return editable ? (
+    <td column={column}>
+      <ContentEditable
+        html={columnData}
+        onChange={handleChange}
+        onBlur={onBlur}
+      />
+    </td>
+  ) : (
+    <td column={column}>{columnData}</td>
+  );
 };

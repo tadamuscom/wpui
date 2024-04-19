@@ -7,14 +7,13 @@
  * @returns {Element}
  * @constructor
  */
-export const Button = ({ wrapExtraClass, extraClass, label }) => {
+export const Button = ({ extraClass, label, disabled }) => {
   return (
-    <div className={wrapExtraClass}>
-      <input
-        type="submit"
-        className={`tada-button ${extraClass}`}
-        value={label}
-      />
-    </div>
+    <input
+      type="submit"
+      className={`tada-button ${extraClass}`}
+      value={label}
+      disabled={disabled}
+    />
   );
 };

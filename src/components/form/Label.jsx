@@ -7,12 +7,10 @@
  * @returns {Element}
  * @constructor
  */
-export const Label = ({ wrapExtraClass, htmlFor, extraClass, label }) => {
+export const Label = ({ htmlFor, extraClass, label }) => {
   return (
-    <div className={wrapExtraClass}>
-      <label htmlFor={htmlFor} className={extraClass}>
-        {label}
-      </label>
-    </div>
+    <label htmlFor={htmlFor} className={extraClass}>
+      {label}
+    </label>
   );
 };

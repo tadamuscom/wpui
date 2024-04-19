@@ -7,10 +7,6 @@
  * @returns {Element}
  * @constructor
  */
-export const HelperText = ({ wrapExtraClass, extraClass, content }) => {
-  return (
-    <div className={wrapExtraClass}>
-      <p className={`tada-helper-text ${extraClass}`}>{content}</p>
-    </div>
-  );
+export const HelperText = ({ extraClass, content }) => {
+  return <p className={`tada-helper-text ${extraClass}`}>{content}</p>;
 };

@@ -7,24 +7,16 @@
  * @returns {Element}
  * @constructor
  */
-export const DatePicker = ({
-  wrapExtraClass,
-  extraClass,
-  id,
-  name,
-  min,
-  max,
-}) => {
+export const DatePicker = ({ extraClass, id, name, min, max, disabled }) => {
   return (
-    <div className={wrapExtraClass}>
-      <input
-        type="date"
-        className={extraClass}
-        id={id}
-        name={name}
-        min={min}
-        max={max}
-      />
-    </div>
+    <input
+      type="date"
+      className={extraClass}
+      id={id}
+      name={name}
+      min={min}
+      max={max}
+      disabled={disabled}
+    />
   );
 };

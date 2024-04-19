@@ -7,18 +7,10 @@
  * @returns {Element}
  * @constructor
  */
-export const LinkButton = ({ wrapExtraClass, click, extraClass, label }) => {
+export const LinkButton = ({ click, extraClass, label }) => {
   return (
-    <div
-      style={{
-        marginTop: "20px",
-        marginBottom: "20px",
-      }}
-      className={wrapExtraClass}
-    >
-      <a onClick={click} className={`tada-button ${extraClass}`}>
-        {label}
-      </a>
-    </div>
+    <a onClick={click} className={`tada-button ${extraClass}`}>
+      {label}
+    </a>
   );
 };

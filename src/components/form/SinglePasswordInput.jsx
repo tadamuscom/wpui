@@ -12,10 +12,10 @@ import { useState } from "react";
 export const SinglePasswordInput = ({
   value,
   onChange,
-  wrapExtraClass,
   extraClass,
   id,
   name,
+  disabled,
 }) => {
   const [localValue, setValue] = useState(value);
 
@@ -28,16 +28,15 @@ export const SinglePasswordInput = ({
   };
 
   return (
-    <div className={wrapExtraClass}>
-      <input
-        type="password"
-        autoComplete="off"
-        className={extraClass}
-        id={id}
-        name={name}
-        value={localValue}
-        onChange={handleChange}
-      />
-    </div>
+    <input
+      type="password"
+      autoComplete="off"
+      className={extraClass}
+      id={id}
+      name={name}
+      value={localValue}
+      onChange={handleChange}
+      disabled={disabled}
+    />
   );
 };

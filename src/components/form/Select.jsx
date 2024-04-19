@@ -7,12 +7,15 @@
  * @returns {Element}
  * @constructor
  */
-export const Select = ({ wrapExtraClass, extraClass, id, name, options }) => {
+export const Select = ({ extraClass, id, name, options, disabled }) => {
   return (
-    <div className={wrapExtraClass}>
-      <select className={`tada-select ${extraClass}`} id={id} name={name}>
-        {options}
-      </select>
-    </div>
+    <select
+      className={`tada-select ${extraClass}`}
+      id={id}
+      name={name}
+      disabled={disabled}
+    >
+      {options}
+    </select>
   );
 };

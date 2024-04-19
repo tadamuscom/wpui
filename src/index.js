@@ -1,6 +1,8 @@
+import "./styles/main.css";
+
 // Form
 export * from "./components/form/Button";
-export * from "./components/form/Checkbox";
+export * from "./components/form/CheckBox";
 export * from "./components/form/DatePicker";
 export * from "./components/form/FormGroup";
 export * from "./components/form/HelperText";
