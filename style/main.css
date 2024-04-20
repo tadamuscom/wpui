@@ -80,7 +80,7 @@ p{
 	margin: 15px 0;
 }
 
-.tada-form-group label{
+.tada-form-group label {
 	font-family: Poppins, serif;
 	font-weight: 600;
 	font-size:16px;
@@ -90,8 +90,7 @@ p{
 }
 
 .tada-form-group .tada-input:focus,
-.tada-form-group .tada-input:hover
-{
+.tada-form-group .tada-input:hover {
 	outline: none;
 	box-shadow: none;
 	background-color: #b5b5b5;
@@ -100,16 +99,22 @@ p{
 }
 
 .tada-form-group .tada-input,
-.tada-form-group select{
+.tada-form-group select {
 	width: 300px;
 	margin-top:8px;
 	background-color: #ECECEC;
 	border: 2px solid #000;
 	border-radius: 11px;
-	padding:10px;
+	padding: 10px;
 	transition-property: all;
 	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 	transition-duration: 150ms;
+	line-height: 1;
+}
+
+.tada-form-group .tada-input:disabled,
+.tada-form-group select:disabled {
+	background-color: #d9d2d2;
 }
 
 .tada-helper-text{
@@ -220,7 +225,12 @@ p{
 	transition-duration: 150ms;
 }
 
-.tada-button:disabled, .tada-disabled{
+.tada-button:disabled, .tada-button:disabled:hover{
+	background-color: #d9d2d2;
+	color: #000;
+}
+
+.tada-disabled{
 	background-color: #1e3d8f;
 	color: #fff;
 }
