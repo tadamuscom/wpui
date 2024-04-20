@@ -3,14 +3,11 @@
  *
  * @since 1.0.2
  *
+ * @param children
  * @param props
  * @returns {JSX.Element}
  * @constructor
  */
-export const Label = ({htmlFor, extraClass, label}) => {
-	return (
-		<label htmlFor={htmlFor} className={extraClass}>
-			{label}
-		</label>
-	);
+export const Label = ({ children, ...props }) => {
+	return <label {...props}>{children}</label>;
 };

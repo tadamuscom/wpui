@@ -1,43 +1,25 @@
-import {useState} from "react";
-
 /**
  * Add a checkbox input
  *
  * @since 1.0.2
  *
+ * @param wrapExtraClass
+ * @param label
  * @param props
  * @returns {JSX.Element}
  * @constructor
  */
-export const CheckBox = ({
-													 onChange,
-													 wrapExtraClass,
-													 label,
-													 name,
-													 id,
-													 disabled,
-												 }) => {
-	const [value, setValue] = useState(value);
-
-	const handleChange = () => {
-		setValue((state) => !state);
-
-		if (onChange) {
-			onChange();
-		}
-	};
+export const CheckBox = ({ wrapExtraClass, label, ...props }) => {
+	const defaultClasses = "checkbox-container tada-flex-row";
 
 	return (
-		<label className={`checkbox-container tada-flex-row ${wrapExtraClass}`}>
+		<label
+			className={
+				wrapExtraClass ? defaultClasses + " " + wrapExtraClass : defaultClasses
+			}
+		>
 			<span className="checkbox-label">{label}</span>
-			<input
-				type="checkbox"
-				checked={value}
-				name={name}
-				id={id}
-				onChange={handleChange}
-				disabled={disabled}
-			/>
+			<input type="checkbox" {...props} />
 			<span className="checkmark"></span>
 		</label>
 	);

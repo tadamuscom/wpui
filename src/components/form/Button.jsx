@@ -3,17 +3,21 @@
  *
  * @since 1.0.2
  *
+ * @param className
+ * @param children
  * @param props
  * @returns {JSX.Element}
  * @constructor
  */
-export const Button = ({extraClass, label, disabled}) => {
+export const Button = ({ className, children, ...props }) => {
+	const defaultClasses = "tada-button";
+
 	return (
-		<input
-			type="submit"
-			className={`tada-button ${extraClass}`}
-			value={label}
-			disabled={disabled}
-		/>
+		<button
+			className={className ? defaultClasses + " " + className : defaultClasses}
+			{...props}
+		>
+			{children}
+		</button>
 	);
 };

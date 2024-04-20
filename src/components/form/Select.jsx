@@ -3,17 +3,19 @@
  *
  * @since 1.0.2
  *
+ * @param className
+ * @param options
  * @param props
  * @returns {JSX.Element}
  * @constructor
  */
-export const Select = ({extraClass, id, name, options, disabled}) => {
+export const Select = ({ className, options, ...props }) => {
+	const defaultClasses = "tada-select";
+
 	return (
 		<select
-			className={`tada-select ${extraClass}`}
-			id={id}
-			name={name}
-			disabled={disabled}
+			className={className ? defaultClasses + " " + className : defaultClasses}
+			{...props}
 		>
 			{options}
 		</select>

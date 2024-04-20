@@ -7,10 +7,15 @@
  * @returns {JSX.Element}
  * @constructor
  */
-export const LinkButton = ({ click, extraClass, label }) => {
-  return (
-    <a onClick={click} className={`tada-button ${extraClass}`}>
-      {label}
-    </a>
-  );
+export const LinkButton = ({ click, className, label }) => {
+	const defaultClasses = "tada-button";
+
+	return (
+		<a
+			onClick={click}
+			className={className ? defaultClasses + " " + className : defaultClasses}
+		>
+			{label}
+		</a>
+	);
 };

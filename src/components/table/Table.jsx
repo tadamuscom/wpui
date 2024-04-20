@@ -1,5 +1,5 @@
-import {TableHeader} from "./TableHeader";
-import {TableRow} from "./TableRow";
+import { TableHeader } from "./TableHeader";
+import { TableRow } from "./TableRow";
 
 /**
  * Add a Table
@@ -10,35 +10,38 @@ import {TableRow} from "./TableRow";
  * @returns {JSX.Element}
  * @constructor
  */
-export const Table = ({editable, onBlur, extraClass, onDelete, headers, rows}) => {
-	if (!editable) {
-		editable = false;
-	}
-
-	if (!onBlur) {
-		onBlur = false;
-	}
+export const Table = ({
+	editable,
+	onBlur,
+	extraClass,
+	onDelete,
+	headers,
+	rows,
+}) => {
+	const defaultClasses = "tada-table";
 
 	return (
-		<table className={`tada-table ${extraClass}`}>
+		<table
+			className={className ? defaultClasses + " " + className : defaultClasses}
+		>
 			<thead>
-			<tr>
-				<TableHeader content="ID" key={"id"}/>
-				{headers.map((header, index) => (
-					<TableHeader content={header} key={index}/>
-				))}
-			</tr>
+				<tr>
+					<TableHeader content="ID" key={"id"} />
+					{headers.map((header, index) => (
+						<TableHeader content={header} key={index} />
+					))}
+				</tr>
 			</thead>
 			<tbody>
-			{rows.map((row, index) => (
-				<TableRow
-					columns={row}
-					key={index}
-					editable={editable}
-					onBlur={onBlur}
-					onDelete={onDelete}
-				/>
-			))}
+				{rows.map((row, index) => (
+					<TableRow
+						columns={row}
+						key={index}
+						editable={editable ? editable : false}
+						onBlur={onBlur ? onBlur : false}
+						onDelete={onDelete}
+					/>
+				))}
 			</tbody>
 		</table>
 	);

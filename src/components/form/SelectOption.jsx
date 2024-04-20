@@ -3,10 +3,12 @@
  *
  * @since 1.0.2
  *
+ * @param id
+ * @param children
  * @param props
  * @returns {JSX.Element}
  * @constructor
  */
-export const SelectOption = ({id, label}) => {
-	return <option value={id}>{label}</option>;
+export const SelectOption = ({ children, ...props }) => {
+	return <option {...props}>{children}</option>;
 };
