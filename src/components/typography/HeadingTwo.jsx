@@ -4,7 +4,7 @@
  * @since 1.0.2
  *
  * @param props
- * @returns {Element}
+ * @returns {JSX.Element}
  * @constructor
  */
 export const HeadingTwo = ({ extraClass, label }) => {

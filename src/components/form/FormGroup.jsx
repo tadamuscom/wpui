@@ -4,9 +4,9 @@
  * @since 1.0.2
  *
  * @param props
- * @returns {Element}
+ * @returns {JSX.Element}
  * @constructor
  */
-export const FormGroup = ({ extraClass, children }) => {
-  return <div className={`tada-form-group ${extraClass}`}>{children}</div>;
+export const FormGroup = ({extraClass, children}) => {
+	return <div className={`tada-form-group ${extraClass}`}>{children}</div>;
 };

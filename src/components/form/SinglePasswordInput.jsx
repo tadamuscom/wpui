@@ -6,7 +6,7 @@ import { useState } from "react";
  * @since 1.0.2
  *
  * @param props
- * @returns {Element}
+ * @returns {JSX.Element}
  * @constructor
  */
 export const SinglePasswordInput = ({
@@ -17,26 +17,26 @@ export const SinglePasswordInput = ({
   name,
   disabled,
 }) => {
-  const [localValue, setValue] = useState(value);
+	const [localValue, setValue] = useState(value);
 
-  const handleChange = (e) => {
-    setValue(e.target.value);
+	const handleChange = (e) => {
+		setValue(e.target.value);
 
-    if (onChange) {
-      onChange();
-    }
-  };
+		if (onChange) {
+			onChange();
+		}
+	};
 
-  return (
-    <input
-      type="password"
-      autoComplete="off"
-      className={extraClass}
-      id={id}
-      name={name}
-      value={localValue}
-      onChange={handleChange}
-      disabled={disabled}
-    />
-  );
+	return (
+		<input
+			type="password"
+			autoComplete="off"
+			className={extraClass}
+			id={id}
+			name={name}
+			value={localValue}
+			onChange={handleChange}
+			disabled={disabled}
+		/>
+	)
 };
