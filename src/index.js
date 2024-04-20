@@ -1,4 +1,4 @@
-import "./styles/main.css";
+import "../style/main.css";
 
 // Form
 export * from "./components/form/Button";

@@ -1,5 +1,5 @@
-import TableHeader from "./TableHeader";
-import TableRow from "./TableRow";
+import {TableHeader} from "./TableHeader";
+import {TableRow} from "./TableRow";
 
 /**
  * Add a Table
