@@ -1,0 +1,14 @@
+{
+  "Kanit-Bold.ttf": "5a66707ada53c00fe440.ttf",
+  "Kanit-Regular.ttf": "dabdf3bf5d279d81d49f.ttf",
+  "Poppins-Light.ttf": "7d433bf5e1d337463a35.ttf",
+  "Poppins-Regular.ttf": "6ed9e552246a054ceb5e.ttf",
+  "Poppins-SemiBold.ttf": "a7766adc2f13064cc8a1.ttf",
+  "fonts/Kanit-Bold.ttf": "fonts/Kanit-Bold.ttf",
+  "fonts/Kanit-Regular.ttf": "fonts/Kanit-Regular.ttf",
+  "fonts/Poppins-Light.ttf": "fonts/Poppins-Light.ttf",
+  "fonts/Poppins-Regular.ttf": "fonts/Poppins-Regular.ttf",
+  "fonts/Poppins-SemiBold.ttf": "fonts/Poppins-SemiBold.ttf",
+  "index.js.LICENSE.txt": "index.js.LICENSE.txt",
+  "main.js": "index.js"
+}

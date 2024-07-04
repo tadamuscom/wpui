@@ -1,5 +1,5 @@
 /**
- * Add a H2 element
+ * Add a H3 element
  *
  * @since 1.0.2
  *
@@ -9,14 +9,14 @@
  * @returns {JSX.Element}
  * @constructor
  */
-export const HeadingTwo = ({ className, children, ...props }) => {
+export const HeadingThree = ({ className, children, ...props }) => {
 	const defaultClasses =
-		'tada-bottom-border font-kanit font-bold text-3xl border-b-2 my-4 uppercase w-fit';
+		'tada-bottom-border font-kanit font-bold text-2xl border-b-2 my-4 uppercase w-fit';
 	return (
-		<h2
+		<h3
 			className={className ? defaultClasses + ' ' + className : defaultClasses}
 			{...props}>
 			{children}
-		</h2>
+		</h3>
 	);
 };

@@ -1,11 +1,17 @@
-import { TableHeader } from "./TableHeader";
-import { TableRow } from "./TableRow";
+import { TableHeader, TableRow } from '../../index';
+import { doAction } from '@wordpress/hooks';
 
 /**
  * Add a Table
  *
  * @since 1.0.2
  *
+ * @param editable
+ * @param onBlur
+ * @param className
+ * @param onDelete
+ * @param headers
+ * @param rows
  * @param props
  * @returns {JSX.Element}
  * @constructor
@@ -13,35 +19,38 @@ import { TableRow } from "./TableRow";
 export const Table = ({
 	editable,
 	onBlur,
-	extraClass,
-	onDelete,
+	className,
 	headers,
 	rows,
+	...props
 }) => {
-	const defaultClasses = "tada-table";
+	const defaultClasses = 'tada-table mt-3';
 
 	return (
 		<table
-			className={className ? defaultClasses + " " + className : defaultClasses}
-		>
+			className={className ? defaultClasses + ' ' + className : defaultClasses}>
+			{doAction('wpui-table-before-head')}
 			<thead>
 				<tr>
-					<TableHeader content="ID" key={"id"} />
 					{headers.map((header, index) => (
 						<TableHeader content={header} key={index} />
 					))}
 				</tr>
 			</thead>
+			{doAction('wpui-table-after-head')}
 			<tbody>
+				{doAction('wpui-table-before-body')}
 				{rows.map((row, index) => (
 					<TableRow
 						columns={row}
 						key={index}
 						editable={editable ? editable : false}
 						onBlur={onBlur ? onBlur : false}
-						onDelete={onDelete}
+						headers={headers}
+						{...props}
 					/>
 				))}
+				{doAction('wpui-table-after-body')}
 			</tbody>
 		</table>
 	);
